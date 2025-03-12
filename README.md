@@ -1,13 +1,13 @@
 FitVerse
 
-Açıklama
+Proje Tanımı:"Fitverse", kullanıcıların sporcu yemek tariflerine, fitness hareketlerine ve kişisel sağlık verilerine dayalı analizlere erişebileceği bir web platformu olacaktır. Kullanıcılar, beslenme ihtiyaçlarına uygun tarifleri keşfederken, aynı zamanda fitness seviyelerine göre egzersizler bulabilecek ve bu egzersizleri takip edebilecekler. Girilen veriler doğrultusunda, kullanıcıların gelişimlerini takip edebileceği grafikler ve analizler sunulacak. Fitverse, kişisel hedeflere göre özelleştirilmiş önerilerle sağlıklı yaşamı desteklemeyi amaçlayan kapsamlı bir platform olacaktır.
 
-FitVerse, kas gruplarına göre egzersizleri gösteren ve sağlıklı tarifler sunan bir web tabanlı fitness uygulamasıdır. Kullanıcılar:
+Proje Kategorisi: Sağlık ve Fitness Uygulamaları
 
-Kas gruplarına özel egzersizleri keşfedebilir.
+Referans Uygulama: https://musclewiki.com
 
-Sağlıklı ve fit tariflere erişebilir.
+Uygulama Adresi: https://musclewiki.com
 
-Antrenmanlarını daha bilinçli bir şekilde planlayabilir.
+Grup Adı: 1Code2Crash
 
-[gereksinim paylaşımı](https://github.com/OAdede/FitVerse/blob/main/gereksinimler.md)
+Proje Ekibi: Ahmet ÇELİK, Ozan Ahmet DEDE, Berke BAŞ, Zeynep Sena UYSAL
