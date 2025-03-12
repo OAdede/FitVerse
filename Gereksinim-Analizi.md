@@ -33,6 +33,6 @@
 
 2.[Berke BAŞ](https://github.com/OAdede/FitVerse/blob/main/Ahmet-%C3%87elik-Gereksinimler.md)
 
-3.[Ozan Ahmet DEDE]
+3.[Ozan Ahmet DEDE](https://github.com/OAdede/FitVerse/blob/main/Ozan-Ahmet-Dede-Gereksinimler.md)
 
 4.[Zeynep Sena UYSAL]
