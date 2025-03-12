@@ -1,34 +1,35 @@
-###GENEL
+# Gereksinimler
 
-1-üye ol 
-2-giriş yap
-3-şifremi unuttum
-4-site içi arama
-5- bize ulaşın(form)
-6- üye soru cevap
+## Genel
+1. Üye ol  
+2. Giriş yap  
+3. Şifremi unuttum  
+4. Site içi arama  
+5. Bize ulaşın (form)  
+6. Üye soru-cevap  
 
-TARİF
-1-tarif filtreleme
-2-tarif paylaşma
-3-öneride bulunma
-4-favori ekleme
-5-favoriden çıkarma
-6-tarif yorum yapma
-7-tarifi beğenme
-8-tarif beğenmeme
+## Tarif
+1. Tarif filtreleme  
+2. Tarif paylaşma  
+3. Öneride bulunma  
+4. Favori ekleme  
+5. Favoriden çıkarma  
+6. Tarif yorum yapma  
+7. Tarifi beğenme  
+8. Tarif beğenmeme  
 
-PROFİL
-1-profil fotoğrafı ayarlama
-2-şifre yenileme
+## Profil
+1. Profil fotoğrafı ayarlama  
+2. Şifre yenileme  
 
-DURUMUM
-1-güncel kilo girişi ile grafik oluşumu 
-2-yağ oranı grafiği oluşumu
-3-vücut kitle endeksi oluşumu ve yorumlama 
+## Durumum
+1. Güncel kilo girişi ile grafik oluşumu  
+2. Yağ oranı grafiği oluşumu  
+3. Vücut kitle endeksi oluşumu ve yorumlama  
 
-HAREKET
-1-vücutta bölge seçip hareketi gösterme
-2-hareketi beğenme
-3-hareketi paylaşma
-4-hareketi değerlendirme
-5-hareketi favorileme
+## Hareket
+1. Vücutta bölge seçip hareketi gösterme  
+2. Hareketi beğenme  
+3. Hareketi paylaşma  
+4. Hareketi değerlendirme  
+5. Hareketi favorileme  
