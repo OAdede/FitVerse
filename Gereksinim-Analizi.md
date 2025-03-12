@@ -35,4 +35,4 @@
 
 3.[Ozan Ahmet DEDE](https://github.com/OAdede/FitVerse/blob/main/Ozan-Ahmet-Dede-Gereksinimler.md)
 
-4.[Zeynep Sena UYSAL]
+4.[Zeynep Sena UYSAL](https://github.com/OAdede/FitVerse/blob/main/Zeynep-Sena-Uysal-Gereksinimler.md)
