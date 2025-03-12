@@ -6,7 +6,7 @@ Proje Kategorisi: Sağlık ve Fitness Uygulamaları
 
 Referans Uygulama: https://musclewiki.com
 
-Uygulama Adresi: https://musclewiki.com
+Uygulama Adresi: null
 
 Grup Adı: 1Code2Crash
 
