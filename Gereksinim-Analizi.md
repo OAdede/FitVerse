@@ -30,6 +30,9 @@
 
 ## Gereksinim Dağılımları
 1.[Ahmet Çelik](https://github.com/OAdede/FitVerse/blob/main/Ahmet-%C3%87elik-Gereksinimler.md)
-2.[Berke BAŞ] (https://github.com/OAdede/FitVerse/blob/main/Ahmet-%C3%87elik-Gereksinimler.md)
+
+2.[Berke BAŞ](https://github.com/OAdede/FitVerse/blob/main/Ahmet-%C3%87elik-Gereksinimler.md)
+
 3.[Ozan Ahmet DEDE]
+
 4.[Zeynep Sena UYSAL]
