@@ -11,3 +11,5 @@ Uygulama Adresi: https://musclewiki.com
 Grup Adı: 1Code2Crash
 
 Proje Ekibi: Ahmet ÇELİK, Ozan Ahmet DEDE, Berke BAŞ, Zeynep Sena UYSAL
+
+1.[Gereksinim analizi]
