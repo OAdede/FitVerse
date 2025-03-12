@@ -9,3 +9,5 @@ Kas gruplarına özel egzersizleri keşfedebilir.
 Sağlıklı ve fit tariflere erişebilir.
 
 Antrenmanlarını daha bilinçli bir şekilde planlayabilir.
+
+[gereksinim paylaşımı](https://github.com/OAdede/FitVerse/blob/main/gereksinimler.md)
