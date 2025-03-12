@@ -1,0 +1,1 @@
+Ozan-Ahmet-Dede-Gereksinimler
