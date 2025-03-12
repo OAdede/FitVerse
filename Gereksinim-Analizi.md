@@ -1,4 +1,4 @@
-## Gereksinim-Analizi
+## Gereksinimler
 
 1. Üye ol (Ahmet ÇELİK)
 2. Giriş yap (Ahmet ÇELİK)  
