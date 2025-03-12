@@ -29,7 +29,7 @@
 24. Hareketi favorileme (Zeynep Sena UYSAL)
 
 ## Gereksinim Dağılımları
-1.[Ahhmet Çelik] 
+1.[Ahmet Çelik](https://github.com/OAdede/FitVerse/blob/main/Ahmet-%C3%87elik-Gereksinimler.md)
 2.[Berke BAŞ]
 3.[Ozan Ahmet DEDE]
 4.[Zeynep Sena UYSAL]
