@@ -6,7 +6,7 @@
 
 **Referans Uygulama:** https://musclewiki.com
 
-**Uygulama Adresi:** null
+**Uygulama Adresi:** NULL
 
 **Grup Adı:** 1Code2Crash
 
