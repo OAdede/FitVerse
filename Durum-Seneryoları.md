@@ -1,7 +1,6 @@
-1.[Ahmet Çelik]()
+1.[Ahmet Çelik Durum Senaryosu]()\n
+2.[Berke Baş Durum Senaryosu]()
 
-2.[Berke Baş]()
+3.[Ozan Ahmet Dede Durum Senaryosu]()
 
-3.[Ozan Ahmet Dede]()
-
-4.[Zeynep Sena Uysal]()
+4.[Zeynep Sena Uysal Durum Senaryosu]()
