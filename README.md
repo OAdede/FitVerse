@@ -13,5 +13,7 @@ Grup Adı: 1Code2Crash
 Proje Ekibi: Ahmet ÇELİK, Ozan Ahmet DEDE, Berke BAŞ, Zeynep Sena UYSAL
 
 1.[Gereksinim Analizi](https://github.com/OAdede/FitVerse/blob/main/Gereksinim-Analizi.md)
-2.[Durum Diyagramı]()
-3.[Durum Senaryoları]()
+
+2.[Durum Diyagramı](https://github.com/OAdede/FitVerse/blob/main/Durum-Diyagramı.md)
+
+3.[Durum Senaryoları](https://github.com/OAdede/FitVerse/blob/main/Durum-Seneryoları.md)
