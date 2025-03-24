@@ -16,4 +16,4 @@ Proje Ekibi: Ahmet ÇELİK, Ozan Ahmet DEDE, Berke BAŞ, Zeynep Sena UYSAL
 
 2.[Durum Diyagramı](https://github.com/OAdede/FitVerse/blob/main/Durum-Diyagramı.md)
 
-3.[Durum Senaryoları](https://github.com/OAdede/FitVerse/blob/main/Durum-Seneryoları.md)
+3.[Durum Senaryoları](https://github.com/OAdede/FitVerse/blob/main/Durum-Senaryoları.md)
