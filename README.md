@@ -18,4 +18,4 @@
 
 3.[Durum Senaryoları](https://github.com/OAdede/FitVerse/blob/main/Durum-Senaryoları.md)
 
-4.[Frontend](https://github.com/OAdede/FitVerse/blob/Ozan-Ahmet-Dede/Frontend.md)
+4.[Frontend](https://github.com/OAdede/FitVerse/blob/main/Frontend.md)
