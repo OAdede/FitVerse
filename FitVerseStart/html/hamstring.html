@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FitVerse | Hamstring</title>
+
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <style>
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      color: #222;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #navbar-placeholder, #footer-placeholder {
+      width: 100%;
+    }
+
+    main.muscle-content {
+      flex: 1;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .muscle-content h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 32px;
+    }
+
+    .video-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+    }
+
+    .video-card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      width: 360px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .video-card:hover {
+      transform: scale(1.03);
+    }
+
+    .video-card iframe {
+      width: 100%;
+      height: 205px;
+      border: none;
+    }
+
+    .video-card .title {
+      padding: 12px 18px;
+      font-size: 17px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .action-buttons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 18px 14px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .action-buttons button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      color: #555;
+    }
+
+    .like-button.liked i { color: red; }
+    .favorite-button.favorited i { color: gold; }
+
+    .share-button {
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    .rating-stars, .difficulty-stars {
+      display: flex;
+      gap: 2px;
+    }
+
+    .rating-stars i,
+    .difficulty-stars i {
+      cursor: pointer;
+      color: #ccc;
+      transition: color 0.2s;
+    }
+
+    .rating-stars i.active,
+    .difficulty-stars i.active {
+      color: orange;
+    }
+
+    .difficulty-section {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 18px 16px;
+      margin-top: -6px;
+    }
+
+    .difficulty-section span {
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="navbar-placeholder"></div>
+
+  <main class="muscle-content">
+    <h1>Hamstring Egzersizleri</h1>
+    <div class="video-cards">
+
+      <!-- Card 1 -->
+      <div class="video-card" data-id="h1">
+        <iframe src="https://www.youtube.com/embed/1Tq3QdYUuHs" allowfullscreen></iframe>
+        <div class="title">Romanian Deadlift</div>
+        <div class="action-buttons">
+          <button class="like-button"><i class="fa-regular fa-heart"></i></button>
+          <button class="share-button"><i class="fa-solid fa-share-nodes"></i></button>
+          <button class="favorite-button"><i class="fa-regular fa-star"></i></button>
+          <div class="rating-stars">
+            <i class="fa-solid fa-star" data-value="1"></i>
+            <i class="fa-solid fa-star" data-value="2"></i>
+            <i class="fa-solid fa-star" data-value="3"></i>
+            <i class="fa-solid fa-star" data-value="4"></i>
+            <i class="fa-solid fa-star" data-value="5"></i>
+          </div>
+        </div>
+        <div class="difficulty-section">
+          <span>Zorluk:</span>
+          <div class="difficulty-stars">
+            <i class="fa-solid fa-dumbbell" data-value="1"></i>
+            <i class="fa-solid fa-dumbbell" data-value="2"></i>
+            <i class="fa-solid fa-dumbbell" data-value="3"></i>
+            <i class="fa-solid fa-dumbbell" data-value="4"></i>
+            <i class="fa-solid fa-dumbbell" data-value="5"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="video-card" data-id="h2">
+        <iframe src="https://www.youtube.com/embed/wqk_cKp9FSk" allowfullscreen></iframe>
+        <div class="title">Lying Leg Curl</div>
+        <div class="action-buttons">
+          <button class="like-button"><i class="fa-regular fa-heart"></i></button>
+          <button class="share-button"><i class="fa-solid fa-share-nodes"></i></button>
+          <button class="favorite-button"><i class="fa-regular fa-star"></i></button>
+          <div class="rating-stars">
+            <i class="fa-solid fa-star" data-value="1"></i>
+            <i class="fa-solid fa-star" data-value="2"></i>
+            <i class="fa-solid fa-star" data-value="3"></i>
+            <i class="fa-solid fa-star" data-value="4"></i>
+            <i class="fa-solid fa-star" data-value="5"></i>
+          </div>
+        </div>
+        <div class="difficulty-section">
+          <span>Zorluk:</span>
+          <div class="difficulty-stars">
+            <i class="fa-solid fa-dumbbell" data-value="1"></i>
+            <i class="fa-solid fa-dumbbell" data-value="2"></i>
+            <i class="fa-solid fa-dumbbell" data-value="3"></i>
+            <i class="fa-solid fa-dumbbell" data-value="4"></i>
+            <i class="fa-solid fa-dumbbell" data-value="5"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="video-card" data-id="h3">
+        <iframe src="https://www.youtube.com/embed/7eRzC2k9RRg" allowfullscreen></iframe>
+        <div class="title">Nordic Hamstring Curl</div>
+        <div class="action-buttons">
+          <button class="like-button"><i class="fa-regular fa-heart"></i></button>
+          <button class="share-button"><i class="fa-solid fa-share-nodes"></i></button>
+          <button class="favorite-button"><i class="fa-regular fa-star"></i></button>
+          <div class="rating-stars">
+            <i class="fa-solid fa-star" data-value="1"></i>
+            <i class="fa-solid fa-star" data-value="2"></i>
+            <i class="fa-solid fa-star" data-value="3"></i>
+            <i class="fa-solid fa-star" data-value="4"></i>
+            <i class="fa-solid fa-star" data-value="5"></i>
+          </div>
+        </div>
+        <div class="difficulty-section">
+          <span>Zorluk:</span>
+          <div class="difficulty-stars">
+            <i class="fa-solid fa-dumbbell" data-value="1"></i>
+            <i class="fa-solid fa-dumbbell" data-value="2"></i>
+            <i class="fa-solid fa-dumbbell" data-value="3"></i>
+            <i class="fa-solid fa-dumbbell" data-value="4"></i>
+            <i class="fa-solid fa-dumbbell" data-value="5"></i>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script type="module" src="../js/include.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".like-button").forEach(btn => {
+        btn.addEventListener("click", () => btn.classList.toggle("liked"));
+      });
+
+      document.querySelectorAll(".favorite-button").forEach(btn => {
+        btn.addEventListener("click", () => btn.classList.toggle("favorited"));
+      });
+
+      document.querySelectorAll(".video-card").forEach(card => {
+        const id = card.getAttribute("data-id");
+
+        // Rating
+        const ratingStars = card.querySelectorAll(".rating-stars i");
+        const savedRating = localStorage.getItem(`rating-${id}`);
+        if (savedRating) {
+          ratingStars.forEach(s => {
+            const val = parseInt(s.dataset.value);
+            s.classList.toggle("active", val <= savedRating);
+          });
+        }
+        ratingStars.forEach(star => {
+          star.addEventListener("click", () => {
+            const val = parseInt(star.dataset.value);
+            localStorage.setItem(`rating-${id}`, val);
+            ratingStars.forEach(s => {
+              s.classList.toggle("active", parseInt(s.dataset.value) <= val);
+            });
+          });
+        });
+
+        // Difficulty
+        const difficultyStars = card.querySelectorAll(".difficulty-stars i");
+        const savedDiff = localStorage.getItem(`difficulty-${id}`);
+        if (savedDiff) {
+          difficultyStars.forEach(s => {
+            const val = parseInt(s.dataset.value);
+            s.classList.toggle("active", val <= savedDiff);
+          });
+        }
+        difficultyStars.forEach(star => {
+          star.addEventListener("click", () => {
+            const val = parseInt(star.dataset.value);
+            localStorage.setItem(`difficulty-${id}`, val);
+            difficultyStars.forEach(s => {
+              s.classList.toggle("active", parseInt(s.dataset.value) <= val);
+            });
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
