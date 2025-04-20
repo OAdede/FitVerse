@@ -1,0 +1,79 @@
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f7f7f7;
+}
+.status-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 60px 10%;
+  gap: 40px;
+}
+.user-info {
+  flex: 1;
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+  text-align: center;
+}
+.user-icon img {
+  width: 250px;
+  margin-bottom: 20px;
+}
+.user-info h2 {
+  color: #8AAAE5;
+  margin-bottom: 20px;
+}
+.user-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  text-align: left;
+}
+.user-info ul li {
+  margin: 10px 0;
+  font-size: 16px;
+}
+.edit-hint {
+  font-size: 14px;
+  color: #555;
+}
+.edit-hint a {
+  color: #8AAAE5;
+  text-decoration: none;
+}
+.edit-hint a:hover {
+  text-decoration: underline;
+}
+.charts {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.chart-container {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+}
+.chart-container h3 {
+  color: #8AAAE5;
+  margin-bottom: 20px;
+  text-align: center;
+}
+canvas {
+  width: 100% !important;
+  height: 300px !important;
+}
+
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1;
+}
