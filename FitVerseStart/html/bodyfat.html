@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitVerse | Yağ Oranı</title>
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/bodyfat.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div id="navbar-placeholder"></div>
+
+    <main>
+      <section class="bodyfat-section">
+        <h1>Vücut Yağ Oranı Hesaplama</h1>
+        <p>Boy, bel, boyun ve kalça ölçülerinle yağ oranını öğren!</p>
+
+        <form id="bodyfat-form">
+          <div class="input-group">
+            <label for="gender">Cinsiyet</label>
+            <select id="gender" required>
+              <option value="male">Erkek</option>
+              <option value="female">Kadın</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label for="height">Boy (cm)</label>
+            <input type="number" id="height" required />
+          </div>
+          <div class="input-group">
+            <label for="neck">Boyun çevresi (cm)</label>
+            <input type="number" id="neck" required />
+          </div>
+          <div class="input-group">
+            <label for="waist">Bel çevresi (cm)</label>
+            <input type="number" id="waist" required />
+          </div>
+          <div class="input-group" id="hip-group" style="display: none">
+            <label for="hip">Kalça çevresi (cm)</label>
+            <input type="number" id="hip" />
+          </div>
+          <button type="submit" class="btn-calculate">Hesapla</button>
+        </form>
+
+        <div id="bodyfat-result" class="result-box"></div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script type="module" src="../js/bodyfat.js"></script>
+    <script type="module" src="../js/script.js"></script>
+    <script>
+      fetch("../html/navbar.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("navbar-placeholder").innerHTML = data;
+        });
+
+      fetch("../html/footer.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+        });
+    </script>
+  </body>
+</html>
