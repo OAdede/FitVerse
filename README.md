@@ -18,4 +18,3 @@
 
 3.[Durum Senaryoları](https://github.com/OAdede/FitVerse/blob/main/Durum-Senaryoları.md)
 
-
