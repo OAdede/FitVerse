@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FitVerse | Tarifler</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/recipes.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+
+  <style>
+    .action-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+
+    .like-button,
+    .dislike-button,
+    .share-button,
+    .comment-button,
+    .favorite-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 20px;
+      color: #888;
+      transition: transform 0.2s ease;
+    }
+
+    .like-button:hover,
+    .dislike-button:hover,
+    .share-button:hover,
+    .comment-button:hover,
+    .favorite-button:hover {
+      transform: scale(1.1);
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+<!-- html/navbar.html -->
+
+<div class="navbar-top">
+  <div class="navbar-top-left">
+    <a href="../html/homepage.html" class="logo-link">
+      <img src="../img/logo3.png" alt="Logo" class="logo-img" />
+      <span class="logo-text">FitVerse</span>
+    </a>
+  </div>
+
+  <div class="navbar-search">
+    <input type="text" placeholder="Search..." />
+    <img src="../img/search.png" alt="Search" class="search-icon" />
+  </div>
+
+  <div class="navbar-top-right">
+    <div class="auth-buttons">
+      <a href="../html/signin.html" class="btn login-btn">Giriş Yap</a>
+      <a href="../html/signup.html" class="btn register-btn">Kayıt Ol</a>
+    </div>
+    <button class="dark-mode-toggle">🌓</button>
+    <a href="../html/profile.html">
+      <img src="../img/profil.png" alt="Profile" class="profile-img" />
+    </a>
+    <img src="../img/setting.png" alt="Settings" class="settings-icon" />
+  </div>
+</div>
+
+<nav class="navbar-bottom">
+  <ul class="nav-links">
+    <li><a href="../html/homepage.html">Home</a></li>
+    <li><a href="../html/movements.html">Movements</a></li>
+    <li><a href="../html/recipes.html">Fit Recipes</a></li>
+    <li class="dropdown">
+      <a href="../html/calculations.html">Calculators</a>
+      <div class="dropdown-menu">
+        <a href="../html/bmi.html">BMI Calculator</a>
+        <a href="../html/calories.html">Calorie Needs</a>
+        <a href="../html/bodyfat.html">Body Fat</a>
+      </div>
+    </li>
+    <li><a href="../html/my-status.html">My Status</a></li>
+    <li><a href="../html/news_page.html">News</a></li>
+    <li><a href="../html/faq.html">FAQ</a></li>
+  </ul>
+</nav>
+
+
+  <!-- Ana İçerik -->
+  <main>
+    <header class="recipes-header">
+      <h1>Fit Tarifler</h1>
+      <div class="filter-buttons">
+        <button data-filter="all" class="active">Tümü</button>
+        <button data-filter="protein">Yüksek Protein</button>
+        <button data-filter="lowcarb">Düşük Karbonhidrat</button>
+      </div>
+    </header>
+
+    <section class="card-container">
+      <!-- Tarif 1 -->
+      <div class="recipe-card" data-id="1" data-category="protein">
+        <img src="../img/tavukgogusu.jpg" alt="Tavuk" />
+        <div class="info">
+          <h3>Tavuk Göğsü Izgara</h3>
+          <p>🔋 320 kcal | ⏱️ 25 dk</p>
+          <p>Malzemeler: Tavuk, zeytinyağı, baharat</p>
+          <button class="expand-btn">Tarifi Gör</button>
+          <div class="recipe-details">
+            <p>Tavuk göğsünü şeritler hâlinde kes. Zeytinyağı, sarımsak ve baharatlarla marine et. Izgarada 6 dakika pişir.</p>
+          </div>
+          <div class="action-buttons">
+            <button class="like-button"><i class="fa-regular fa-thumbs-up"></i></button>
+            <button class="dislike-button"><i class="fa-regular fa-thumbs-down"></i></button>
+            <button class="share-button"><i class="fa-solid fa-share-nodes"></i></button>
+            <button class="comment-button"><i class="fa-regular fa-comment"></i></button>
+            <button class="favorite-button"><i class="fa-regular fa-star"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarif 2 -->
+      <div class="recipe-card" data-id="2" data-category="lowcarb">
+        <img src="../img/avakado.jpg" alt="Yumurta" />
+        <div class="info">
+          <h3>Avokadolu Yumurta</h3>
+          <p>🔋 240 kcal | ⏱️ 10 dk</p>
+          <p>Malzemeler: Yumurta, avokado, pul biber</p>
+          <button class="expand-btn">Tarifi Gör</button>
+          <div class="recipe-details">
+            <p>Yumurtayı haşla. Avokadoyu ez, tuz ve limon ekle. Yumurtayı üzerine koy, pul biberle süsle.</p>
+          </div>
+          <div class="action-buttons">
+            <button class="like-button"><i class="fa-regular fa-thumbs-up"></i></button>
+            <button class="dislike-button"><i class="fa-regular fa-thumbs-down"></i></button>
+            <button class="share-button"><i class="fa-solid fa-share-nodes"></i></button>
+            <button class="comment-button"><i class="fa-regular fa-comment"></i></button>
+            <button class="favorite-button"><i class="fa-regular fa-star"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarif 3 -->
+      <div class="recipe-card" data-id="3" data-category="protein">
+        <img src="../img/yogurt.jpg" alt="Smoothie" />
+        <div class="info">
+          <h3>Yoğurtlu Smoothie</h3>
+          <p>🔋 150 kcal | ⏱️ 5 dk</p>
+          <p>Malzemeler: Yoğurt, yaban mersini, chia</p>
+          <button class="expand-btn">Tarifi Gör</button>
+          <div class="recipe-details">
+            <p>Yoğurt, meyve ve chia tohumunu blenderda karıştır. Nane ile süsle.</p>
+          </div>
+          <div class="action-buttons">
+            <button class="like-button"><i class="fa-regular fa-thumbs-up"></i></button>
+            <button class="dislike-button"><i class="fa-regular fa-thumbs-down"></i></button>
+            <button class="share-button"><i class="fa-solid fa-share-nodes"></i></button>
+            <button class="comment-button"><i class="fa-regular fa-comment"></i></button>
+            <button class="favorite-button"><i class="fa-regular fa-star"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarif Önerisi -->
+      <div class="recipe-card" data-id="suggestion" style="width: 1128px; max-width: 100%; margin: 0 auto;">
+        <div class="info">
+          <h3 style="text-align: center; font-size: 24px; margin-bottom: 20px;">Tarif Önerisinde Bulun</h3>
+          <form id="suggest-form">
+            <p><strong>Tarif Adı:</strong></p>
+            <input type="text" id="suggest-title" required style="width:98%;padding:8px;margin-bottom:16px;border:1px solid #ccc;border-radius:6px;">
+
+            <p><strong>Malzemeler:</strong></p>
+            <textarea id="suggest-ingredients" rows="4" required style="width:98%;padding:8px;margin-bottom:16px;border:1px solid #ccc;border-radius:6px;"></textarea>
+
+            <p><strong>Hazırlanışı:</strong></p>
+            <textarea id="suggest-steps" rows="5" required style="width:98%;padding:8px;margin-bottom:16px;border:1px solid #ccc;border-radius:6px;"></textarea>
+
+            <button type="submit" style="width: 100%; background-color: #8AAAE5; color: #fff; padding: 12px; font-size: 16px; border: none; border-radius: 6px; cursor: pointer;">Gönder</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <h2>FitVerse</h2>
+        <p>Fitness yolculuğunuzda yanınızda</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.instagram.com/ahmeetcelik0/"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h3>Bağlantılar</h3>
+        <ul>
+          <li><a href="../html/homepage.html">Ana Sayfa</a></li>
+          <li><a href="../html/movements.html">Hareketler</a></li>
+          <li><a href="../html/recipes.html">Fit Tarifler</a></li>
+          <li><a href="../html/calculations.html">Hesaplamalar</a></li>
+          <li><a href="../html/my-status.html">Durumum</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>Hesap</h3>
+        <ul>
+          <li><a href="../html/signin.html">Giriş Yap</a></li>
+          <li><a href="../html/signup.html">Kayıt Ol</a></li>
+          <li><a href="../html/profile.html">Profilim</a></li>
+          <li><a href="../html/settings.html">Ayarlar</a></li>
+          <li><a href="../html/faq.html">Yardım</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h3>İletişim</h3>
+        <p><i class="fas fa-map-marker-alt"></i> 123 Fitness Caddesi, Spor Mahallesi, İstanbul</p>
+        <p><i class="fas fa-phone"></i> +90 544 962 80 22</p>
+        <p><i class="fas fa-envelope"></i> info@fitverse.com</p>
+        <form class="newsletter">
+          <input type="email" placeholder="E-posta adresiniz" />
+          <button type="submit">Bize Ulaşın</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 FitVerse. Tüm hakları saklıdır.</p>
+      <div class="legal-links">
+        <a href="#">Gizlilik Politikası</a>
+        <a href="#">Kullanım Şartları</a>
+        <a href="#">Çerez Politikası</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script type="module" src="../js/script.js"></script>
+  <script src="../js/recipes.js"></script>
+  <script>
+    fetch("../pages/navbar.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("navbar-placeholder").innerHTML = data;
+      });
+
+    fetch("../pages/footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("footer-placeholder").innerHTML = data;
+      });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("suggest-form");
+      form?.addEventListener("submit", e => {
+        e.preventDefault();
+        alert("Öneriniz gönderilmiştir, teşekkürler!");
+        form.reset();
+      });
+    });
+  </script>
+</body>
+</html>
