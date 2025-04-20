@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FitVerse | Hareketler</title>
+
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .anatomy-container {
+      position: relative;
+      max-width: 1000px;
+      width: 100%;
+    }
+
+    .anatomy-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .muscle-btn {
+      position: absolute;
+      background-color: rgba(138, 170, 229, 0.6);
+      border: 1px solid #444;
+      color: white;
+      font-weight: bold;
+      padding: 4px 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 12px;
+      transition: background-color 0.3s ease;
+    }
+
+    .muscle-btn:hover {
+      background-color: rgba(70, 120, 200, 0.8);
+    }
+
+    /* Konumlar (güncellendi ekran görüntüsüne göre) */
+    .biceps     { top: 190px; left: 320px; }
+    .triceps    { top: 205px; left: 800px; }
+    .shoulders  { top: 130px; left: 300px; }
+    .chest      { top: 170px; left: 230px; }
+    .abs        { top: 250px; left: 233px; }
+    .quads      { top: 400px; left: 280px; }
+    .calves     { top: 560px; left: 285px; }
+
+    .back       { top: 210px; left: 701px; }
+ 
+    .glutes     { top: 370px; left: 710px; }
+    .hamstring  { top: 460px; left: 740px; }
+  </style>
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <main>
+    <div class="anatomy-container">
+      <img src="../img/pngwing.com.png" alt="Kas Haritası" />
+
+      <a href="biceps.html" class="muscle-btn biceps">Biceps</a>
+      <a href="triceps.html" class="muscle-btn triceps">Triceps</a>
+      <a href="shoulders.html" class="muscle-btn shoulders">Omuz</a>
+      <a href="chest.html" class="muscle-btn chest">Göğüs</a>
+      <a href="abs.html" class="muscle-btn abs">Karın</a>
+      <a href="quads.html" class="muscle-btn quads">Ön Bacak</a>
+      <a href="calves.html" class="muscle-btn calves">Baldır</a>
+
+      <a href="back.html" class="muscle-btn back">Sırt</a>
+
+      <a href="glutes.html" class="muscle-btn glutes">Kalça</a>
+      <a href="hamstring.html" class="muscle-btn hamstring">Arka Bacak</a>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+    fetch("../html/navbar.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("navbar-placeholder").innerHTML = data;
+      });
+
+    fetch("../html/footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("footer-placeholder").innerHTML = data;
+      });
+  </script>
+</body>
+</html>
