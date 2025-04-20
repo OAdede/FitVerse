@@ -24,7 +24,7 @@
 17. Güncel kilo girişi ile grafik oluşumu  
 18. Yağ oranı grafiği oluşumu 
 
-#Zeynep Sena Uysal Gereksinimler
+# Zeynep Sena Uysal Gereksinimler
 19. Vücut kitle endeksi oluşumu ve yorumlama 
 20. Vücutta bölge seçip hareketi gösterme   
 21. Hareketi beğenme   
