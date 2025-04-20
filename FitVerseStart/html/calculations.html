@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FitVerse | Hesaplamalar</title>
+
+  <!-- Stil dosyaları -->
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/calculations.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+
+  <!-- Sticky footer için ek stiller -->
+  <style>
+    html, body {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    main {
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ortak Navbar -->
+  <div id="navbar-placeholder"></div>
+
+  <main>
+    <header class="calc-header">
+      <h1>Vücut Analiz Hesaplamaları</h1>
+      <p>Hedeflerini belirlemek için en doğru başlangıç: Vücudunu tanı!</p>
+    </header>
+
+    <section class="calc-cards">
+      <a href="../html/bmi.html" class="calc-card">
+        <img src="../img/hesap.png" alt="BMI">
+        <div class="card-info">
+          <h3>Vücut Kitle Endeksi (BMI)</h3>
+          <p>Boy ve kilona göre ideal kilo aralığını ve hangi gruba girdiğini öğren.</p>
+        </div>
+      </a>
+
+      <a href="../html/calories.html" class="calc-card">
+        <img src="../img/kaloriihtiyacı.jpg" alt="Calorie Needs">
+        <div class="card-info">
+          <h3>Günlük Kalori İhtiyacı</h3>
+          <p>Yaş, cinsiyet ve aktivite düzeyine göre günlük enerji ihtiyacını hesapla.</p>
+        </div>
+      </a>
+
+      <a href="../html/bodyfat.html" class="calc-card">
+        <img src="../img/yağ.png" alt="Body Fat">
+        <div class="card-info">
+          <h3>Vücut Yağ Oranı</h3>
+          <p>Bel, boyun ve kalça ölçülerinle yağ oranını öğren, hedeflerine yön ver.</p>
+        </div>
+      </a>
+    </section>
+  </main>
+
+  <!-- Ortak Footer -->
+  <div id="footer-placeholder"></div>
+
+  <script type="module" src="../js/include.js"></script>
+  <script type="module" src="../js/script.js"></script>
+</body>
+</html>
