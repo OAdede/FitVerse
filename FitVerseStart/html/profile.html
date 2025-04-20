@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profilim | FitVerse</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link rel="stylesheet" href="../css/profile.css" />
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <div class="profile-container">
+    <div class="profile-info">
+      <h3>Mevcut Bilgiler</h3>
+      <img src="../img/profil.png" alt="Profil Fotoğrafı" id="preview-image" class="profile-pic-preview" />
+      <p><strong>İsim:</strong> <span id="display-name">-</span></p>
+      <p><strong>Soyisim:</strong> <span id="display-surname">-</span></p>
+      <p><strong>Boy:</strong> <span id="display-height">-</span> cm</p>
+      <p><strong>Kilo:</strong> <span id="display-weight">-</span> kg</p>
+      <p><strong>Bel Çevresi:</strong> <span id="display-waist">-</span> cm</p>
+      <p><strong>Boyun Çevresi:</strong> <span id="display-neck">-</span> cm</p>
+      <button onclick="logout()">Çıkış Yap</button>
+    </div>
+
+    <div class="profile-form">
+      <h2>Bilgileri Güncelle</h2>
+      <form id="profile-form">
+        <label for="firstName">İsim:</label>
+        <input type="text" id="firstName" name="firstName" required />
+
+        <label for="lastName">Soyisim:</label>
+        <input type="text" id="lastName" name="lastName" required />
+
+        <label for="profilePic">Profil Fotoğrafı:</label>
+        <input type="file" id="profilePic" name="profilePic" accept="image/*" />
+
+        <label for="height">Boy (cm):</label>
+        <input type="number" id="height" name="height" required />
+
+        <label for="weight">Kilo (kg):</label>
+        <input type="number" id="weight" name="weight" required />
+
+        <label for="waist">Bel Çevresi (cm):</label>
+        <input type="number" id="waist" name="waist" required />
+
+        <label for="neck">Boyun Çevresi (cm):</label>
+        <input type="number" id="neck" name="neck" required />
+
+        <button type="submit">Güncelle</button>
+      </form>
+    </div>
+
+    <div class="password-form">
+      <h2>Şifre Güncelle</h2>
+      <form id="password-form">
+        <label for="oldPassword">Eski Şifre:</label>
+        <input type="password" id="oldPassword" name="oldPassword" required />
+
+        <label for="newPassword">Yeni Şifre:</label>
+        <input type="password" id="newPassword" name="newPassword" required />
+
+        <label for="confirmPassword">Yeni Şifre (Tekrar):</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required />
+
+        <button type="submit">Şifreyi Güncelle</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="footer-placeholder"></div>
+
+  <!-- JS -->
+  <script type="module" src="../js/include.js"></script>
+  <script>
+    const previewImage = document.getElementById("preview-image");
+    const profileInput = document.getElementById("profilePic");
+
+    window.addEventListener("load", () => {
+      const data = JSON.parse(localStorage.getItem("fitverseUserData"));
+      if (data) {
+        document.getElementById("display-name").textContent = data.firstName;
+        document.getElementById("display-surname").textContent = data.lastName;
+        document.getElementById("display-height").textContent = data.height;
+        document.getElementById("display-weight").textContent = data.weight;
+        document.getElementById("display-waist").textContent = data.waist;
+        document.getElementById("display-neck").textContent = data.neck;
+
+        document.getElementById("firstName").value = data.firstName;
+        document.getElementById("lastName").value = data.lastName;
+        document.getElementById("height").value = data.height;
+        document.getElementById("weight").value = data.weight;
+        document.getElementById("waist").value = data.waist;
+        document.getElementById("neck").value = data.neck;
+
+        previewImage.src = data.profilePic || "../img/profil.png";
+      } else {
+        previewImage.src = "../img/profil.png";
+      }
+    });
+
+    document.getElementById("profile-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const firstName = document.getElementById("firstName").value;
+      const lastName = document.getElementById("lastName").value;
+      const height = document.getElementById("height").value;
+      const weight = document.getElementById("weight").value;
+      const waist = document.getElementById("waist").value;
+      const neck = document.getElementById("neck").value;
+
+      document.getElementById("display-name").textContent = firstName;
+      document.getElementById("display-surname").textContent = lastName;
+      document.getElementById("display-height").textContent = height;
+      document.getElementById("display-weight").textContent = weight;
+      document.getElementById("display-waist").textContent = waist;
+      document.getElementById("display-neck").textContent = neck;
+
+      const userData = {
+        firstName,
+        lastName,
+        height,
+        weight,
+        waist,
+        neck,
+        profilePic: previewImage.src,
+      };
+
+      localStorage.setItem("fitverseUserData", JSON.stringify(userData));
+      alert("Profil bilgileri güncellendi!");
+    });
+
+    document.getElementById("password-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const newPass = document.getElementById("newPassword").value;
+      const confirmPass = document.getElementById("confirmPassword").value;
+
+      if (newPass !== confirmPass) {
+        alert("Yeni şifreler uyuşmuyor!");
+        return;
+      }
+
+      alert("Şifre başarıyla güncellendi!");
+    });
+
+    profileInput.addEventListener("change", function(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          previewImage.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      } else {
+        previewImage.src = "../img/profil.png";
+      }
+    });
+
+    function logout() {
+      alert("Çıkış yapıldı.");
+      window.location.href = "../html/homepage.html";
+    }
+  </script>
+</body>
+</html>

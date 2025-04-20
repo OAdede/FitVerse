@@ -1,0 +1,82 @@
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f7f7f7;
+}
+
+.faq-section {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.faq-section h1 {
+  text-align: center;
+  color: #8AAAE5;
+  margin-bottom: 30px;
+}
+
+.faq-item {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.faq-question h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.toggle-answer {
+  background: #8AAAE5;
+  border: none;
+  padding: 8px 14px;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.toggle-answer:hover {
+  background: #5f85db;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  background: #f1f5ff;
+  padding: 0 20px;
+  transition: all 0.4s ease;
+}
+
+.faq-answer p {
+  margin: 20px 0;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  padding: 10px 20px 20px;
+}
+
+/* Footer'ın her zaman sayfanın altında görünmesini sağla */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+footer {
+  margin-top: auto;
+}
+
