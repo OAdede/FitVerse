@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FitVerse | Durumum</title>
+
+  <!-- CSS Dosyaları -->
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/my-status.css">
+  <link rel="stylesheet" href="../css/footer.css">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <div id="navbar-placeholder"></div>
+
+  <main>
+    <section class="status-wrapper">
+      <div class="user-info">
+        <div class="user-icon">
+          <img src="../img/profil.jpg" alt="Kullanıcı">
+        </div>
+        <h2>Vücut Bilgilerin</h2>
+        <ul>
+          <li><strong>İsim:</strong> <span id="status-name">-</span></li>
+          <li><strong>Boy:</strong> <span id="status-height">-</span></li>
+          <li><strong>Kilo:</strong> <span id="status-weight">-</span></li>
+          <li><strong>Bel Çevresi:</strong> <span id="status-waist">-</span></li>
+          <li><strong>Boyun Çevresi:</strong> <span id="status-neck">-</span></li>
+          <li><strong>Yağ Oranı:</strong> %18</li>
+          <li><strong>Kas Oranı:</strong> %40</li>
+        </ul>
+        <p class="edit-hint">
+          Bilgileri değiştirmek için <a href="../html/profile.html">Profilim</a> sayfasını ziyaret edin.
+        </p>
+      </div>
+
+      <div class="charts">
+        <div class="chart-container">
+          <h3>Yağ Oranı Değişimi</h3>
+          <canvas id="fatChart"></canvas>
+        </div>
+        <div class="chart-container">
+          <h3>Kas Oranı Değişimi</h3>
+          <canvas id="muscleChart"></canvas>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Navbar ve Footer -->
+  <script>
+    fetch("../html/navbar.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("navbar-placeholder").innerHTML = data;
+      });
+
+    fetch("../html/footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("footer-placeholder").innerHTML = data;
+      });
+  </script>
+
+  <!-- LocalStorage Verisi -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const data = JSON.parse(localStorage.getItem("fitverseUserData"));
+      if (data) {
+        document.getElementById("status-name").textContent = `${data.firstName} ${data.lastName}`;
+        document.getElementById("status-height").textContent = `${data.height} cm`;
+        document.getElementById("status-weight").textContent = `${data.weight} kg`;
+        document.getElementById("status-waist").textContent = `${data.waist} cm`;
+        document.getElementById("status-neck").textContent = `${data.neck} cm`;
+      }
+    });
+  </script>
+
+  <!-- Grafikler -->
+  <script type="module" src="../js/my-status.js"></script>
+</body>
+</html>
