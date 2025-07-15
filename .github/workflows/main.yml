@@ -1,0 +1,38 @@
+name: FitVerse CI - Build Docker Images
+
+on:
+  push:
+    branches: [ "main" ] # Sadece main branch'e push yapıldığında çalışsın
+  workflow_dispatch: # Manuel olarak da tetiklenebilmesini sağlar
+
+jobs:
+  build-and-push-images:
+    runs-on: ubuntu-latest # İşlem ubuntu sanal makinesinde çalışacak
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3 # 1. Adım: Kodu sanal makineye indir
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2 # 2. Adım: Docker build için gerekli ortamı kur
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2 # 3. Adım: Docker Hub'a giriş yap
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }} # GitHub Secrets'tan alınacak
+          password: ${{ secrets.DOCKERHUB_TOKEN }}  # GitHub Secrets'tan alınacak
+
+      - name: Build and push backend image
+        uses: docker/build-push-action@v4 # 4. Adım: Backend imajını build et ve push'la
+        with:
+          context: ./backend # Dockerfile'ın olduğu klasör
+          file: ./backend/Dockerfile
+          push: true # Docker Hub'a push et
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/fitverse-backend:latest # İmajın adı ve etiketi
+
+      - name: Build and push worker image
+        uses: docker/build-push-action@v4 # 5. Adım: Worker imajını build et ve push'la
+        with:
+          context: ./backend # Worker da aynı Dockerfile'ı kullanıyor
+          file: ./backend/Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/fitverse-worker:latest # İmajın adı ve etiketi 

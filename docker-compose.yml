@@ -1,0 +1,89 @@
+# Docker Compose dosya formatı sürümünü belirtiyoruz.
+version: '3.8'
+
+# Çalıştırılacak servisleri (container'ları) tanımlıyoruz.
+services:
+  # Backend servisimiz (Node.js uygulaması)
+  backend:
+    # Bu servisin imajını nereden oluşturacağını belirtiyoruz.
+    # ./backend klasöründeki Dockerfile'ı kullanacak.
+    build: ./backend
+    container_name: fitverse-backend
+    # Bilgisayarımızın 3000 portunu container'ın 3000 portuna bağlıyoruz.
+    ports:
+      - "3000:3000"
+    # Çevre değişkenlerini (environment variables) tanımlıyoruz.
+    env_file:
+      - ./backend/.env # .env dosyasının yolunu burada belirtiyoruz.
+    environment:
+      # ÇOK ÖNEMLİ: .env dosyasındaki MONGO_URI'yi ezip,
+      # Docker ağı içindeki 'mongo' adlı servisimize bağlanmasını sağlıyoruz.
+      - MONGO_URI=mongodb://mongo:27017/fitverse
+    # Kod değişikliklerinin container'a anında yansıması için volume bağlıyoruz.
+    volumes:
+      - ./backend:/app
+      - /app/node_modules # Bu satır, local node_modules'ın container'dakini ezmesini önler.
+    # Bu servisin başlaması için 'mongo' servisinin başlamasını bekler.
+    depends_on:
+      mongo:
+        condition: service_started
+      redis:
+        condition: service_started
+      rabbitmq:
+        condition: service_healthy
+
+  worker:
+    build: ./backend
+    container_name: fitverse-worker
+    command: node worker.js
+    env_file:
+      - ./backend/.env
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+
+  # MongoDB veritabanı servisimiz
+  mongo:
+    # Resmi MongoDB imajını kullanıyoruz.
+    image: mongo:latest
+    container_name: fitverse-mongo
+    # Bilgisayarımızın 27017 portunu container'ın 27017 portuna bağlıyoruz.
+    ports:
+      - "27017:27017"
+    # Veritabanı verilerinin container silinse bile kaybolmaması için volume tanımlıyoruz.
+    volumes:
+      - mongo-data:/data/db
+
+  # Redis önbellekleme servisimiz
+  redis:
+    image: "redis:alpine" # Hafif bir Redis imajı kullanıyoruz
+    container_name: fitverse-redis
+    ports:
+      - "6379:6379" # Redis'in varsayılan portu
+    volumes:
+      - redis-data:/data
+
+  rabbitmq:
+    image: "rabbitmq:3-management"
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      - RABBITMQ_DEFAULT_USER=user
+      - RABBITMQ_DEFAULT_PASS=password
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+# Veri saklamak için kullanılacak volume'ü tanımlıyoruz.
+volumes:
+  mongo-data:
+    driver: local
+  redis-data:
+    driver: local 

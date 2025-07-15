@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profilim | FitVerse</title>
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/profile.css" />
+    <script src="../js/navbar.js" defer></script>
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <div class="profile-container">
+        <!-- Mevcut Bilgiler Bölümü -->
+        <div class="profile-info">
+            <h3>Mevcut Bilgiler</h3>
+            <p><strong>İsim:</strong> <span id="display-name">-</span></p>
+            <p><strong>Boy:</strong> <span id="display-height">-</span> cm</p>
+            <p><strong>Kilo:</strong> <span id="display-weight">-</span> kg</p>
+            <p><strong>Yaş:</strong> <span id="display-age">-</span></p>
+            <p><strong>Cinsiyet:</strong> <span id="display-gender">-</span></p>
+            <p><strong>Bel Çevresi:</strong> <span id="display-waist">-</span> cm</p>
+            <p><strong>Boyun Çevresi:</strong> <span id="display-neck">-</span> cm</p>
+            <button id="logout-btn">Çıkış Yap</button>
+        </div>
+
+        <!-- Bilgileri Güncelleme Formu -->
+        <div class="profile-form">
+            <h2>Bilgileri Güncelle</h2>
+            <form id="update-profile-form">
+                <label for="height">Boy (cm):</label>
+                <input type="number" id="height" name="height" />
+
+                <label for="weight">Kilo (kg):</label>
+                <input type="number" id="weight" name="weight" />
+
+                <label for="age">Yaş:</label>
+                <input type="number" id="age" name="age" />
+
+                <label for="waist">Bel Çevresi (cm):</label>
+                <input type="number" id="waist" name="waist" />
+
+                <label for="neck">Boyun Çevresi (cm):</label>
+                <input type="number" id="neck" name="neck" />
+                
+                <label for="gender">Cinsiyet:</label>
+                <select id="gender" name="gender">
+                    <option value="">Seçiniz...</option>
+                    <option value="male">Erkek</option>
+                    <option value="female">Kadın</option>
+                </select>
+
+                <button type="submit">Güncelle</button>
+            </form>
+        </div>
+
+        <!-- Profil Fotoğrafı Güncelleme -->
+        <div class="profile-avatar-section">
+            <h2>Profil Fotoğrafı</h2>
+            <div class="avatar-container">
+                <img src="../img/profil.png" alt="Mevcut Avatar" id="avatar-preview" class="avatar-preview">
+            </div>
+            <form id="avatar-upload-form">
+                <label for="avatar-input" class="custom-file-upload">
+                    Fotoğraf Seç
+                </label>
+                <input type="file" id="avatar-input" name="avatar" accept="image/png, image/jpeg, image/jpg">
+                <button type="submit">Fotoğrafı Yükle</button>
+            </form>
+            <button type="button" id="remove-avatar-btn" class="remove-btn">Fotoğrafı Kaldır</button>
+            <p class="file-info">5MB'den küçük PNG, JPG veya JPEG dosyaları.</p>
+        </div>
+
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../js/profile.js"></script>
+</body>
+</html>

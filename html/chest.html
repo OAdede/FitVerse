@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FitVerse | Göğüs Kasları</title>
+
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <script src="../js/navbar.js" defer></script>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      color: #222;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #navbar-placeholder, #footer-placeholder {
+      width: 100%;
+    }
+
+    main.muscle-content {
+      flex: 1;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .muscle-content h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 32px;
+    }
+
+    .video-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .video-card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      width: 360px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .video-card:hover {
+      transform: scale(1.03);
+    }
+
+    .video-card iframe {
+      width: 100%;
+      height: 180px;
+      border: none;
+    }
+
+    .video-card .title {
+      padding: 10px 15px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .action-buttons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 15px 14px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .like-dislike-container, .fav-share-container {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .action-buttons button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      color: #555;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .like-button.liked i { color: #007bff; }
+    .dislike-button.disliked i { color: #dc3545; }
+    .favorite-button.favorited i { color: gold; }
+
+    .rating-section {
+      padding: 5px 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f8f9fa;
+    }
+
+    .rating-stars {
+      display: flex;
+      gap: 5px;
+    }
+
+    .rating-dumbbell {
+      color: #ccc;
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+
+    .rating-dumbbell.active,
+    .rating-dumbbell:hover {
+      color: #fd7e14; /* orange */
+    }
+
+    .average-rating {
+      font-size: 14px;
+      font-weight: 500;
+      color: #6c757d;
+    }
+
+    .share-button {
+    }
+
+    .rating-stars, .difficulty-stars {
+      display: flex;
+      gap: 2px;
+    }
+
+    .rating-stars i,
+    .difficulty-stars i {
+      cursor: pointer;
+      color: #ccc;
+      transition: color 0.2s;
+    }
+
+    .rating-stars i.active,
+    .difficulty-stars i.active {
+      color: orange;
+    }
+
+    .difficulty-section {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 15px 16px;
+      margin-top: -6px;
+    }
+
+    .difficulty-section span {
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- İçerik -->
+  <main class="muscle-content">
+    <h1 id="muscle-group-title">Göğüs Egzersizleri</h1>
+    <div class="video-cards" id="video-cards-container">
+      <!-- Hareket kartları buraya JavaScript ile eklenecek -->
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- JS -->
+  <script src="../js/include.js"></script>
+  <script type="module" src="../js/movements-page.js"></script>
+
+</body>
+</html>

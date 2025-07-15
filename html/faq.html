@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sıkça Sorulan Sorular - FitVerse</title>
+
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/faq.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <script src="../js/navbar.js" defer></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f7f7f7;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    footer {
+      margin-top: auto;
+    }
+
+    .faq-section {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .faq-section h1 {
+      text-align: center;
+      color: #8AAAE5;
+      margin-bottom: 30px;
+    }
+
+    .faq-item,
+    .faq-form-item {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      margin-bottom: 20px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      padding: 20px;
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-question h3 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .toggle-answer {
+      background: #8AAAE5;
+      border: none;
+      padding: 8px 14px;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .toggle-answer:hover {
+      background: #5f85db;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      background: #f1f5ff;
+      padding: 0 20px;
+      transition: all 0.4s ease;
+    }
+
+    .faq-answer p {
+      margin: 20px 0;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      padding: 10px 20px 20px;
+    }
+
+    .faq-form-item h3 {
+      font-size: 18px;
+      margin-bottom: 16px;
+      color: #333;
+      text-align: center;
+    }
+
+    .faq-form-item input,
+    .faq-form-item textarea {
+      width: 100%;
+      max-width: 500px;
+      padding: 12px;
+      margin-bottom: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .faq-form-item textarea {
+      resize: none;
+    }
+
+    .faq-form-item button {
+      background-color: #8AAAE5;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 15px;
+      transition: background 0.3s ease;
+      display: block;
+      margin: 10px auto 0;
+    }
+
+    .faq-form-item button:hover {
+      background-color: #5f85db;
+    }
+  </style>
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <main>
+    <section class="faq-section">
+      <h1>Sık Sorulan Sorular</h1>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>FitVerse'i kullanmak ücretli mi?</h3>
+          <button class="toggle-answer">Cevabını Gör</button>
+        </div>
+        <div class="faq-answer">
+          <p>Hayır, FitVerse tamamen ücretsizdir.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>3D model üzerinde hareket seçimi nasıl yapılır?</h3>
+          <button class="toggle-answer">Cevabını Gör</button>
+        </div>
+        <div class="faq-answer">
+          <p>Hareketler sayfasına giderek 3D modeli döndürebilir ve kaslara tıklayarak ilgili hareketleri görebilirsiniz.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Verilerim güvende mi?</h3>
+          <button class="toggle-answer">Cevabını Gör</button>
+        </div>
+        <div class="faq-answer">
+          <p>Evet. FitVerse kullanıcı bilgilerinin güvenliği için endüstri standardı şifreleme kullanır.</p>
+        </div>
+      </div>
+
+      <!-- Soru Sor Bölümü -->
+      <div class="faq-form-item">
+        <h3>Soru Sor</h3>
+        <input type="email" id="faq-email" placeholder="E-posta adresiniz" />
+        <textarea id="faq-question" placeholder="Sorunuzu yazın..." rows="4"></textarea>
+        <button id="add-question-btn">Gönder</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script type="module" src="../js/include.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".toggle-answer").forEach(button => {
+        button.addEventListener("click", () => {
+          const faqItem = button.closest(".faq-item");
+          faqItem.classList.toggle("active");
+
+          const isActive = faqItem.classList.contains("active");
+          button.textContent = isActive ? "Cevabı Gizle" : "Cevabını Gör";
+        });
+      });
+
+      document.getElementById("add-question-btn").addEventListener("click", async () => {
+        const emailEl = document.getElementById("faq-email");
+        const questionEl = document.getElementById("faq-question");
+        
+        const email = emailEl.value;
+        const question = questionEl.value;
+
+        if (!email || !question) {
+          alert("Lütfen tüm alanları doldurun.");
+          return;
+        }
+        
+        try {
+          const res = await fetch('http://localhost:3000/api/contact/ask', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email, question }),
+          });
+
+          if (res.ok) {
+            alert("Sorunuz başarıyla gönderildi. Teşekkür ederiz!");
+            emailEl.value = '';
+            questionEl.value = '';
+          } else {
+            const errorData = await res.json();
+            alert(`Bir hata oluştu: ${errorData.error || 'Lütfen tekrar deneyin.'}`);
+          }
+        } catch (error) {
+          console.error('Soru gönderme hatası:', error);
+          alert('Sunucuya bağlanırken bir hata oluştu.');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

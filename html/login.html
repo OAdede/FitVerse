@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Yap | FitVerse</title>
+    <link rel="stylesheet" href="../css/signin.css">
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <script src="../js/navbar.js" defer></script>
+</head>
+<body>
+
+    <div id="navbar-placeholder"></div>
+    
+    <div class="container">
+        <form id="login-form" class="signin-form">
+            <h2>Giriş Yap</h2>
+            <div class="input-group">
+                <input type="email" id="email" placeholder="E-posta" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Şifre" required>
+            </div>
+            <button type="submit" class="signin-btn">Giriş Yap</button>
+            <div id="message" class="message" style="color: red; margin-top: 10px;"></div>
+            <div class="bottom-text">
+                <p>Hesabın yok mu? <a href="signup.html">Kayıt Ol</a></p>
+                <p><a href="forgot-password.html">Şifremi Unuttum</a></p>
+            </div>
+        </form>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../js/include.js"></script>
+    <script src="../js/auth.js"></script>
+</body>
+</html>

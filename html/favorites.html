@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FitVerse | Favorilerim</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/recipes.css" />
+  <link rel="stylesheet" href="../css/movements.css" /> <!-- Eklendi -->
+  <link rel="stylesheet" href="../css/footer.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <script src="../js/navbar.js" defer></script>
+  
+  <style>
+    .section-title {
+        text-align: center;
+        font-size: 2.5em;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        color: #333;
+    }
+    body {
+        background-image: none !important;
+    }
+
+    /* Hareket Kartları için Stiller (chest.html'den alındı) */
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .video-card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      width: 360px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .video-card:hover {
+      transform: scale(1.03);
+    }
+
+    .video-card iframe {
+      width: 100%;
+      height: 180px;
+      border: none;
+    }
+
+    .video-card .title {
+      padding: 10px 15px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #333;
+    }
+    
+    .video-card .description {
+      padding: 0 15px 10px;
+      font-size: 14px;
+      color: #666;
+      flex-grow: 1; /* Açıklamanın alanı doldurmasını sağlar */
+    }
+
+    .action-buttons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 15px 14px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .action-buttons button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      color: #555;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .favorite-button.favorited i { color: gold; }
+
+    .rating-section {
+      padding: 5px 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f8f9fa;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+    }
+
+    .rating-stars {
+      display: flex;
+      gap: 5px;
+    }
+
+    .rating-dumbbell {
+      color: #ccc;
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+
+    .rating-dumbbell.active,
+    .rating-dumbbell:hover {
+      color: #fd7e14; /* orange */
+    }
+
+    .average-rating {
+      font-size: 14px;
+      font-weight: 500;
+      color: #6c757d;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar Placeholder -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- Ana İçerik -->
+  <main>
+    <header class="recipes-header">
+      <h1>Favorilerim</h1>
+      <p>Beğendiğiniz ve favorilerinize eklediğiniz tarifleri ve hareketleri burada bulabilirsiniz.</p>
+    </header>
+
+    <h2 class="section-title">Favori Tarifler</h2>
+    <section id="favorite-recipes-container" class="card-container">
+      <!-- Favori tarifler buraya dinamik olarak eklenecek -->
+    </section>
+
+    <h2 class="section-title">Favori Hareketler</h2>
+    <section id="favorite-movements-container" class="card-container">
+        <!-- Favori hareketler buraya dinamik olarak eklenecek -->
+    </section>
+  </main>
+
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- JS -->
+  <script src="../js/include.js"></script>
+  <script src="../js/favorites.js"></script>
+</body>
+</html> 

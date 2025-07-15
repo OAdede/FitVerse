@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitVerse | Vücut Yağ Oranı</title>
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/bodyfat.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <script src="../js/navbar.js" defer></script>
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <main>
+        <section class="bodyfat-section">
+            <h1>Vücut Yağ Oranı Hesaplama</h1>
+            <p>Vücudunuzdaki yağ oranını tahmin edin.</p>
+            <form id="bodyfat-form">
+                <div class="input-group">
+                    <label for="gender">Cinsiyet</label>
+                    <select id="gender" required>
+                        <option value="">Seçiniz...</option>
+                        <option value="male">Erkek</option>
+                        <option value="female">Kadın</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="height">Boy (cm)</label>
+                    <input type="number" id="height" required />
+                </div>
+                <div class="input-group">
+                    <label for="weight">Kilo (kg)</label>
+                    <input type="number" id="weight" required />
+                </div>
+                <div class="input-group">
+                    <label for="waist">Bel Çevresi (cm)</label>
+                    <input type="number" id="waist" required />
+                </div>
+                <div class="input-group">
+                    <label for="neck">Boyun Çevresi (cm)</label>
+                    <input type="number" id="neck" required />
+                </div>
+                <div id="hip-group" class="input-group" style="display: none;">
+                    <label for="hip">Kalça Çevresi (cm)</label>
+                    <input type="number" id="hip" />
+                </div>
+                <button type="submit" class="btn-calculate">Hesapla</button>
+            </form>
+            <div id="bodyfat-result" class="result-box"></div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../js/include.js"></script>
+    <script src="../js/bodyfat.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kayıt Ol | FitVerse</title>
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <script src="../js/navbar.js" defer></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .register-container {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 450px;
+    }
+
+    .register-container h2 {
+      text-align: center;
+      margin-bottom: 24px;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .register-container button {
+      width: 100%;
+      padding: 12px;
+      background-color: #8AAAE5;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- Kayıt Formu -->
+  <main>
+    <div class="register-container">
+      <form id="signup-form">
+        <h2>Kayıt Ol</h2>
+        <input type="text" id="name" placeholder="Kullanıcı Adı" required />
+        <input type="email" id="email" placeholder="E-posta" required />
+        <input type="password" id="password" placeholder="Şifre" required />
+        <button type="submit">Kayıt Ol</button>
+      </form>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Footer yükleme -->
+  <script>
+    fetch("../html/footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("footer-placeholder").innerHTML = data;
+      });
+  </script>
+  <script src="../js/auth.js"></script>
+</body>
+</html>

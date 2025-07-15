@@ -1,0 +1,66 @@
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f7f7f7;
+}
+.calorie-section {
+  max-width: 600px;
+  margin: 60px auto;
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+  text-align: center;
+}
+.calorie-section h1 {
+  margin-bottom: 10px;
+  color: #8AAAE5;
+}
+.calorie-section p {
+  margin-bottom: 30px;
+  color: #666;
+}
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+.input-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #333;
+}
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+.btn-calculate {
+  padding: 12px 20px;
+  background: #8AAAE5;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.btn-calculate:hover {
+  background: #5f85db;
+}
+.result-box {
+  margin-top: 30px;
+  padding: 20px;
+  background: #eef2f9;
+  border-radius: 12px;
+  display: none;
+  text-align: center;
+}
+.result-box strong {
+  color: #8AAAE5;
+  font-size: 18px;
+}

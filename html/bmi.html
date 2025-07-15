@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitVerse | BMI Hesaplama</title>
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/bmi.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <script src="../js/navbar.js" defer></script>
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <main>
+        <section class="bmi-section">
+            <h1>Vücut Kitle Endeksi (BMI) Hesaplama</h1>
+            <p>Boy ve kilonu girerek vücut kitle endeksini öğren!</p>
+
+            <form id="bmi-form">
+                <div class="input-group">
+                    <label for="height">Boy (cm)</label>
+                    <input type="number" id="height" required />
+                </div>
+                <div class="input-group">
+                    <label for="weight">Kilo (kg)</label>
+                    <input type="number" id="weight" required />
+                </div>
+                <button type="submit" class="btn-calculate">Hesapla</button>
+            </form>
+
+            <div id="bmi-result" class="result-box" style="display: none;">
+                <h4>Sonucunuz</h4>
+                <p><strong>BMI Değeri:</strong> <span id="bmi-value"></span></p>
+                <p><strong>Durum:</strong> <span id="bmi-status"></span></p>
+                <div id="bmi-comment-container" class="comment-box">
+                    <p id="bmi-comment"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../js/include.js"></script>
+    <script src="../js/bmi.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+Fnal ve Büt Sınavı çn Proje Teslm Rehber 
+• Vze öncesnde yapmış olduğunuz front-end kısmı back-end le bağlanmalı.  
+• Front-end kısmında yaptığınız her br gereksnmn back-end’de br karşılığı olmalı. 
+Örneğn front-end kısmında Üye ol gereksnmnzn br üye ol sayfası varsa, bu 
+sayfaya karşılık gelen ve üye olma şlemn gerçekleştrecek br back-end metodunuz 
+(Rest API yazacaksanız br Rest API metodu) olması gerekr. 
+• Backend ve Rest API’lern grup çnde adaletl olduğunu düşündüğünüz şeklde 
+dağıtılması szn sorumluluğunuzda. 
+• Back-end’e bağlamadığınız hçbr gereksnmden puan alamazsınız. Her takım üyes 
+kend gereksnmlernden sorumludur. 
+• Front-end’de yaptığınız gereksnmlerden farklı gereksnmler yapablrsnz. Herhang 
+br sınırlama yok.  
+• Projenn teslm tarh fnal tarh 16:00’a kadardır. 
+• Eğer projelernz yetşmyorsa slack üzernden “Hocam bz büte kalmak styoruz” 
+dyerek büte bırakacağınızı özel mesaj olarak bldrnz. 
+• Büte bırakanlar çn son tar h se büt tarh 16:00’dır. 
+• Büte bırakmak puan kaybına neden olmaz. 
+• Not: Eğer projenn tüm aşamalarını (backend, rest ap , docker, CI/CD, RabbtMQ, 
+Reds) nternet üzernde gerçekleşt reb lrsenz eksk gereksn mlernz olsa ble 
+tüm grup üyelerne 100 vereceğm. Bunun çn odama gelp sürec anlatmanız 
+gerekmektedr. 
+1. Backend (30 Puan): 
+Amaç: Uygulamanın ş mantığını yöneten katman. Sunucu kodunun yazıldığı yer. REST API 
+yazılmazsa doğrudan vertabanına bağlanmanız gerekecek. Bu takdrde REST API 
+kısmından puan alamazsınız. 
+Backend Framework Seçm 
+• Javascrpt/Typescrpt le yazacaksınız Node.js ve Express ya da NextJS 
+• Python le yazacaksanız Django, Flask 
+• Java le yazacaksanız Sprng Boot 
+• C# le yazacaksanız .NET 
+• Vertabanı: PostgreSQL, MySQL, MongoDB, MSSQL 
+• Authentcaton (JWT veya OAuth2). 
+• Mobl çn Flutter, Swft, Kotln, React Natve 
+• Her frontend gereksnmne karşılık gelen br back-end fonksyonu/sınıfı vs. olmalı. 
+• Her grup üyes mutlaka üzer ne düşen gereksnm aded kadar back-end gereksnm 
+yapmalı. 
+2. REST API (20 Puan) 
+Amaç: Frontend le backend arasında ver letm sağlayan ara katman. Frebase gb hazır 
+teknolojler kullanmak REST API yazmak anlamına gelmez. Dolayısıyla bu tarz teknolojler 
+kullanırsanız bu kısımdan puan alamazsınız. 
+• CRUD şlemlern çeren tüm gereksnmler çn RESTful endpont'ler oluşturulmalı. 
+Dolayısıyla frontend’den gelecek tüm şlemler (üye ol, grş yap, ürün lstele vs.) Rest 
+API aracılığı le vertabanıyla haberleşmel . 
+• HTTP metodları doğru kullanılmalı: GET, POST, PUT, DELETE. 
+• Her grup üyesnn REST API kullanması gerekr. Her grup üyes kullandığı kadar REST 
+API puanı alacak. 
+3. CI/CD (10 Puan) 
+Amaç: Kod değşklğ yapıldığında projenn otomatk olarak test, buld ve deploy 
+(yayına alınmasını) edlmesn sağlar.  
+Kullanableceğnz teknolojler: 
+• Gthub Actons 
+• Jenkns (lokalde çalıştığını göstermenz yeterl) 
+• Grup çnde 1 defa kullanılması yeterl. Yan her grup üyesnn ayrı ayrı CI/CD 
+kullanma zorunluluğu yok. Kullanımdan herkes 10 puan alacak. 
+4. Docker (10 Puan) 
+Amaç: Projenn contaner ortamında taşınablr hale getrlmesn sağlar. 
+• Lokalde çalıştığını göstermenz yeterl. 
+• Rest API, Front-end, Back-end kısımlarından herhang brnn ya da hepsnn docker 
+üzer nde çalıştığını göstermenz yeterl.  
+• Grup çnde 1 defa kullanılması yeterl. Yan her grup üyesnn ayrı ayrı docker 
+contanerda çalıştırma zorunluluğu yok. Kullanımdan herkes 10 puan alacak. 
+5. RabbtMQ/Kafka (10 Puan) 
+Amaç: Uygulamanızda servsler arasında asenkron letşm sağlamak çn mesaj 
+kuyruğu sstem olarak kullanılır.  
+• Lokalde çalıştığını göstermenz yeterl. 
+• Grup çnde 1 defa kullanılması yeterl. Yan her grup üyesnn ayrı ayrı rabbtmq 
+kullanma yok. Kullanımdan herkes 10 puan alacak. 
+• amqplb (Node.js), pka (Python), sprng-boot-starter-amqp (Java) kütüphaneler 
+kullanılablr.  
+Örnek-1: Sparş Verldğnde Bldrm ve Faturalama: Kullanıcı br sparş verdğnde, 
+orders servs bu şlem gerçekleştrdkten sonra RabbtMQ’ya "order_created" mesajı 
+gönderr. Bu mesajı dnleyen k ayrı servs olablr: 
+• Notfcaton Servce: Kullanıcıya e-posta veya SMS bldrm gönderr. 
+• Bllng Servce: Fatura oluşturur ve vertabanına kaydeder. 
+Örnek-2: Sosyal medya uygulamasında yen br fotoğraf paylaşma: Kullanıcı yen br 
+fotoğraf paylaştığında, post_servce RabbtMQ’ya "new_post" mesajı yollar. Bu mesajı 
+dnleyen serv sler: 
+• Feed Servce: Takpçlern ana sayfa akışlarına bu post’u ekler. 
+• Notfcaton Servce: Takpçlere “X yen fotoğraf paylaştı” bldrm gönderr. 
+• Moderaton Servce (steğe bağlı): İçerğ fltreler veya moderasyon kurallarına göre 
+kontrol eder. 
+6. Reds/Memcached (10 Puan) 
+Amaç: Önbellekleme yapmayı sağlar. Örneğn: Sık erşlen verlern Reds’e yazılıp 
+oradan okunması, API rate lmtng uygulaması gb. 
+• Grup çnde 1 defa kullanılması yeterl.  
+• Lokalde çalıştığını göstermenz yeterl. 
+Örnek-1: E-Tcaret Uygulaması: Ürün detaylarını önbelleğe alma 
+• Ürün detayları sıkça değşmeyen ve sıkça erşlen verler olablr. 
+• GET /ap/products/:d endpont’ lk stekte vertabanından ver çeker, Reds’e 
+kaydeder. 
+• Sonrak steklerde Reds’ten çeklr. 
+Örnek-2: Sepet Yönetm: 
+• Kullanıcıya at sepet Reds’te cart:user_d şeklnde tutulablr. 
+• Kullanıcı oturum açmadan ble sepetne ürün ekleyeblr. 
+• Sepet Reds’ten okunur ve güncellenr. 
+Örnek-3: Sosyal Medya Uygulaması: Takpç sayısı ve popülerlk lstes 
+• Her yen takpte Reds’tek takpç sayısı artırılır. 
+• Popüler gönderler çn sıralı popülerlk lstes yapılablr. 
+Örnek-4: Kullanıcı Oturumu / JWT Kara Lste 
+• Oturum blgler sesson:user_d anahtarıyla tutulablr. 
+• Kullanıcı logout olduğunda JWT token kara lsteye Reds’te ekleneblr. 
+7. Doman/Telefon (10 Puan) 
+Amaç: Web uygulamasının ücretl/ücretsz br doman üzernde yayınlanması. Mobl 
+uygulamaların fzksel chaz üzernde çalıştığının gösterlmes. 
+• Grup çnde 1 defa yapılması yeterl.  
+• Vercel, Netlfy, Heroku, Render, EC2, Azure, Amazon vb. hzmetler kullanılablr. 
+PROJE TESLİMİ 
+Ödev teslm 2 şeklde yapılablr.  
+1. Uygulamanın front-end ve back-end’nn doğru br şeklde bağlandığını kanıtlayan br 
+uygulama tanıtım vdeosu aracılığıyla. Bu vdeo 
+https://gthub.com/asmsnan/YazMuh?tab=readme-ov-fle lnkndek sunum 
+vdeosu kısmına youtube vdeosu olarak eklenmel.  
+a. Grup üyeler tek çalışır br uygulama üzernden sırayla kend gereksnmlern 
+sesl olarak sunmalılar. Sunmaya başlayan kş önce smn söyleyerek kendn 
+tanıtmalı daha sonra sırayla her br gereksnmn smn söyleyerek uygulama 
+üzernden gereksnmnn çalıştığını spatlamalı. Örnek: Merhaba ben vıdı vıdı, 
+1. Gereksnm vıdı vıdı, çalışma akışı anlatılır. Gereksnm üye olma se yapılan 
+front-end’den üye olunur, backend’n bu şlem başarıyla gösterdğ 
+vertabanından gösterlerek kanıtlanır. Sırayla dğer gereksnmlere geçlerek 
+aynı şeklde anlatılır. Çalıştığı kanıtlamazsa o gereksnmden puan alınamaz. 
+2. Grup üyeler fnal tarhne kadar (16:00), büte bırakıldıysa büt tarhne kadar odama 
+gelerek projelern göstereblrler. Vdeo çekmelerne gerek kalmaz.
