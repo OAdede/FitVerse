@@ -1,20 +1,22 @@
 const Movement = require('../models/Movement');
 const User = require('../models/User');
+const asyncHandler = require('express-async-handler');
 const redis = require('redis');
 
 // Redis Client Kurulumu
-let redisClient;
-(async () => {
-  redisClient = redis.createClient({
-    // Docker'da olduğumuz için servis adını kullanıyoruz.
-    // Docker dışında çalıştırırken url: 'redis://localhost:6379' kullanılırdı.
-    url: 'redis://redis:6379'
-  });
+// Bağlantıyı hardcoded string yerine process.env'den alacak şekilde düzenle
+const redisClient = redis.createClient({
+    url: process.env.REDIS_URL
+});
 
-  redisClient.on('error', (err) => console.log('Redis Client Error', err));
+redisClient.on('error', (err) => console.log('Redis Client Error', err));
 
-  await redisClient.connect();
-})();
+// Uygulama başlarken Redis'e bağlan
+redisClient.connect().then(() => {
+    console.log('Connected to Redis');
+}).catch(err => {
+    console.error('Could not connect to Redis', err);
+});
 
 
 // @desc    Get all movements for a specific category
