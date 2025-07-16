@@ -17,10 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Navbar'ı yükle
-  loadHTML("navbar-placeholder", "../html/navbar.html");
-
-  // Footer'ı yükle ve yüklendikten sonra formu dinle
+  // Sadece Footer'ı yükle ve yüklendikten sonra formu dinle
   loadHTML("footer-placeholder", "../html/footer.html", () => {
     const newsletterForm = document.querySelector('.newsletter');
     if (newsletterForm) {
