@@ -5,7 +5,7 @@ const processEmailQueue = async () => {
     let connection;
     try {
         // 1. RabbitMQ'ya bağlan
-        connection = await amqp.connect(process.env.RABBITMQ_URL);
+        connection = await amqp.connect(process.env.CLOUDAMQP_URL);
         const channel = await connection.createChannel();
         const queue = 'email_queue';
         await channel.assertQueue(queue, { durable: true });
