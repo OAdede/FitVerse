@@ -32,10 +32,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         try {
-          const res = await fetch('https://fitverse-backend-ea3y.onrender.com/api/contact/subscribe', {
+          const res = await fetch('https://fitverse-backend-ea3y.onrender.com/api/contact/ask', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email }),
+            body: JSON.stringify({ 
+              email: email,
+              question: 'Footer "Bize Ulaşın" formundan iletişim talebi.' 
+            }),
           });
 
           if (res.ok) {
