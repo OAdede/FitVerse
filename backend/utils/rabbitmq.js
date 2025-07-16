@@ -5,7 +5,7 @@ let channel;
 async function connectRabbitMQ() {
   try {
     // Bağlantı bilgisini hardcoded string yerine process.env'den al
-    const connection = await amqp.connect(process.env.RABBITMQ_URL);
+    const connection = await amqp.connect(process.env.CLOUDAMQP_URL);
     channel = await connection.createChannel();
     await channel.assertQueue('email_queue', { durable: true });
     console.log('RabbitMQ connected and queue asserted');
