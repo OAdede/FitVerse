@@ -21,7 +21,7 @@ app.use(express.json()); // Add this line to parse JSON bodies
 const allowedOrigins = [
     'http://localhost:3000', // Local geliştirme için
     'http://127.0.0.1:5500', // Live Server için
-    'https://fitverse.onrender.com' // Buraya Render'daki frontend adresinizi ekleyin
+    'https://fitverse-frontend.onrender.com' // Frontend'in canlı adresi
 ];
 
 app.use(cors({
