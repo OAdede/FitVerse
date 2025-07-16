@@ -17,8 +17,23 @@ const app = express();
 // Body Parser Middleware
 app.use(express.json()); // Add this line to parse JSON bodies
 
-// Enable CORS
-app.use(cors());
+// Enable CORS - Gelişmiş Ayarlar
+const allowedOrigins = [
+    'http://localhost:3000', // Local geliştirme için
+    'http://127.0.0.1:5500', // Live Server için
+    'https://fitverse.onrender.com' // Buraya Render'daki frontend adresinizi ekleyin
+];
+
+app.use(cors({
+    origin: function (origin, callback) {
+        // origin yoksa (örn: Postman gibi araçlar) veya listedeyse izin ver
+        if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    }
+}));
 
 // Statik dosyaları sunmak için middleware (HTML, CSS, JS, Resimler vb.)
 // Bu, backend klasöründen bir üst dizine çıkarak projenin kökünü hedefler.
