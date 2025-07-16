@@ -29,7 +29,7 @@ document.getElementById("bmi-form").addEventListener("submit", async function(e)
   }
 
   try {
-    const res = await fetch('http://localhost:3000/api/calculations/bmi', {
+    const res = await fetch('https://fitverse-backend-ea3y.onrender.com/api/calculations/bmi', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

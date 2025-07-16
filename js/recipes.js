@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const fetchRecipes = async () => {
         try {
-            const res = await fetch('http://localhost:3000/api/recipes');
+            const res = await fetch('https://fitverse-backend-ea3y.onrender.com/api/recipes');
             if (!res.ok) {
                 throw new Error('Tarifler yüklenemedi');
             }
@@ -123,15 +123,15 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const addCardEventListeners = () => {
         const cards = document.querySelectorAll(".recipe-card:not([data-id='suggestion'])");
-        cards.forEach(card => {
-            const btn = card.querySelector(".expand-btn");
+  cards.forEach(card => {
+    const btn = card.querySelector(".expand-btn");
             btn?.addEventListener("click", () => {
-                const isActive = card.classList.contains("active");
+      const isActive = card.classList.contains("active");
                 // Diğer tüm kartları kapat
                 document.querySelectorAll(".recipe-card.active").forEach(c => {
                     if (c !== card) {
-                        c.classList.remove("active");
-                        c.querySelector(".expand-btn").innerText = "Tarifi Gör";
+        c.classList.remove("active");
+        c.querySelector(".expand-btn").innerText = "Tarifi Gör";
                     }
                 });
                 // Tıklanan kartı aç/kapat
@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const recipeId = card.getAttribute('data-id');
                 try {
-                    const res = await fetch(`http://localhost:3000/api/recipes/${recipeId}/like`, {
+                    const res = await fetch(`https://fitverse-backend-ea3y.onrender.com/api/recipes/${recipeId}/like`, {
                         method: 'PUT',
                         headers: {
                             'x-auth-token': token,
@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const recipeId = card.getAttribute('data-id');
                 try {
-                    const res = await fetch(`http://localhost:3000/api/recipes/${recipeId}/dislike`, {
+                    const res = await fetch(`https://fitverse-backend-ea3y.onrender.com/api/recipes/${recipeId}/dislike`, {
                         method: 'PUT',
                         headers: {
                             'x-auth-token': token,
@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const recipeId = card.getAttribute('data-id');
                 try {
-                    const res = await fetch(`http://localhost:3000/api/recipes/${recipeId}/favorite`, {
+                    const res = await fetch(`https://fitverse-backend-ea3y.onrender.com/api/recipes/${recipeId}/favorite`, {
                         method: 'PUT',
                         headers: { 'x-auth-token': token },
                     });
@@ -265,7 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
                     if (confirm('Bu yorumu silmek istediğinizden emin misiniz?')) {
                         try {
-                            const res = await fetch(`http://localhost:3000/api/recipes/${recipeId}/comments/${commentId}`, {
+                            const res = await fetch(`https://fitverse-backend-ea3y.onrender.com/api/recipes/${recipeId}/comments/${commentId}`, {
                                 method: 'DELETE',
                                 headers: {
                                     'x-auth-token': token
@@ -284,9 +284,9 @@ document.addEventListener('DOMContentLoaded', () => {
                             console.error('Yorum silme hatası:', error);
                             alert('Yorum silinirken bir hata oluştu.');
                         }
-                    }
-                });
-            });
+      }
+    });
+  });
 
             // Yorum gönderme formu için olay dinleyici
             const commentForm = card.querySelector('.comment-form');
@@ -301,7 +301,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const recipeId = card.getAttribute('data-id');
 
                 try {
-                    const res = await fetch(`http://localhost:3000/api/recipes/${recipeId}/comment`, {
+                    const res = await fetch(`https://fitverse-backend-ea3y.onrender.com/api/recipes/${recipeId}/comment`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
@@ -355,24 +355,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    filterButtons.forEach(button => {
-        button.addEventListener("click", () => {
-            document.querySelector(".filter-buttons .active")?.classList.remove("active");
-            button.classList.add("active");
+  filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      document.querySelector(".filter-buttons .active")?.classList.remove("active");
+      button.classList.add("active");
 
-            const filter = button.getAttribute("data-filter");
+      const filter = button.getAttribute("data-filter");
             const recipeCards = document.querySelectorAll(".recipe-card");
-            recipeCards.forEach(card => {
+      recipeCards.forEach(card => {
                 // Öneri kartını her zaman göster
                 if (card.getAttribute('data-id') === 'suggestion') {
                     card.style.display = 'block';
                     return;
                 }
-                const category = card.getAttribute("data-category");
-                card.style.display = (filter === "all" || category === filter) ? "flex" : "none";
-            });
-        });
+        const category = card.getAttribute("data-category");
+        card.style.display = (filter === "all" || category === filter) ? "flex" : "none";
+      });
     });
+  });
 
     // Başlangıçta tarifleri yükle
     fetchRecipes();
@@ -398,7 +398,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // veya backend'den /api/profile/me çağrısı yapabiliriz.
                 // En basit yol, backend'in bu bilgiyi zaten bilmesi.
                 // Biz yine de gönderelim, contactController'a eklemiştim.
-                const profileRes = await fetch('http://localhost:3000/api/profile/me', { headers: { 'x-auth-token': token } });
+                const profileRes = await fetch('https://fitverse-backend-ea3y.onrender.com/api/profile/me', { headers: { 'x-auth-token': token } });
                 if(profileRes.ok) {
                     const profile = await profileRes.json();
                     userEmail = profile.user.email;
@@ -411,7 +411,7 @@ document.addEventListener('DOMContentLoaded', () => {
         submitButton.disabled = true;
 
         try {
-            const res = await fetch('http://localhost:3000/api/contact/suggest-recipe', {
+            const res = await fetch('https://fitverse-backend-ea3y.onrender.com/api/contact/suggest-recipe', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

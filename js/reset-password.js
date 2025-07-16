@@ -34,8 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            const res = await fetch(`http://localhost:3000/api/auth/resetpassword/${token}`, {
-                method: 'PUT',
+            const res = await fetch(`https://fitverse-backend-ea3y.onrender.com/api/auth/resetpassword/${token}`, {
+                method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },

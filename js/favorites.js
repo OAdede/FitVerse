@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Favori Tarifleri Çek ve Render Et
     const fetchAndRenderFavoriteRecipes = async () => {
         try {
-            const res = await fetch('http://localhost:3000/api/profile/favorites', {
+            const res = await fetch('https://fitverse-backend-ea3y.onrender.com/api/profile/favorites', {
                 headers: { 'x-auth-token': token }
             });
             const recipes = await res.json();
@@ -48,8 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
              // Kullanıcı profili ve favori hareketleri aynı anda çek
             const [profileRes, movementsRes] = await Promise.all([
-                fetch('http://localhost:3000/api/profile/me', { headers: { 'x-auth-token': token } }),
-                fetch('http://localhost:3000/api/profile/favorite-movements', { headers: { 'x-auth-token': token } })
+                fetch('https://fitverse-backend-ea3y.onrender.com/api/profile/me', { headers: { 'x-auth-token': token } }),
+                fetch('https://fitverse-backend-ea3y.onrender.com/api/profile/favorite-movements', { headers: { 'x-auth-token': token } })
             ]);
 
             if (!profileRes.ok || !movementsRes.ok) {
@@ -121,8 +121,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const id = card.getAttribute('data-id');
                 const isRecipe = card.classList.contains('recipe-card');
                 const url = isRecipe
-                    ? `http://localhost:3000/api/recipes/${id}/favorite`
-                    : `http://localhost:3000/api/movements/${id}/favorite`;
+                    ? `https://fitverse-backend-ea3y.onrender.com/api/recipes/${id}/favorite`
+                    : `https://fitverse-backend-ea3y.onrender.com/api/movements/${id}/favorite`;
                 // Not: Tarif favori API'si PUT kullanıyor olabilir, bu kodda POST varsayılıyor.
                 // Eğer farklıysa, `movementController`'daki gibi bir yapı kurulmalı.
                 const method = isRecipe ? 'PUT' : 'POST';
@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const ratingValue = ratingIcon.dataset.value;
 
             try {
-                const res = await fetch(`http://localhost:3000/api/movements/${movementId}/rate`, {
+                const res = await fetch(`https://fitverse-backend-ea3y.onrender.com/api/movements/${movementId}/rate`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

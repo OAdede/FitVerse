@@ -28,7 +28,7 @@ document.addEventListener('submit', async function (e) {
     }
 
     try {
-        const res = await fetch('http://localhost:3000/api/calculations/calories', {
+        const res = await fetch('https://fitverse-backend-ea3y.onrender.com/api/calculations/calories', {
             method: 'POST',
             headers: { 
                 'Content-Type': 'application/json',

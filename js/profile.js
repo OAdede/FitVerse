@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             // Profil ve favori verilerini aynı anda çek
             const [profileRes, favoritesRes] = await Promise.all([
-                fetch('http://localhost:3000/api/profile/me', { headers: authHeaderOnly }),
-                fetch('http://localhost:3000/api/profile/favorites', { headers: authHeaderOnly }) // Bu endpoint'i daha sonra oluşturacağız
+                fetch('https://fitverse-backend-ea3y.onrender.com/api/profile/me', { headers: authHeaderOnly }),
+                fetch('https://fitverse-backend-ea3y.onrender.com/api/profile/favorites', { headers: authHeaderOnly }) // Bu endpoint'i daha sonra oluşturacağız
             ]);
 
             if (!profileRes.ok) {
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Avatarı güncelle
             if (profile.user.avatar) {
                 // Önbelleği atlamak için zaman damgası ekle
-                avatarPreview.src = `http://localhost:3000${profile.user.avatar}?${new Date().getTime()}`;
+                avatarPreview.src = `https://fitverse-backend-ea3y.onrender.com${profile.user.avatar}?${new Date().getTime()}`;
             } else {
                 avatarPreview.src = '../img/profil.png'; // Varsayılan avatar
             }
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             try {
-                const res = await fetch('http://localhost:3000/api/profile', {
+                const res = await fetch('https://fitverse-backend-ea3y.onrender.com/api/profile', {
                     method: 'POST',
                     headers: headersWithContent,
                     body: JSON.stringify(profileData)
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
             formData.append('avatar', file);
 
             try {
-                const res = await fetch('http://localhost:3000/api/profile/upload-avatar', {
+                const res = await fetch('https://fitverse-backend-ea3y.onrender.com/api/profile/upload-avatar', {
                     method: 'POST',
                     headers: authHeaderOnly, // Sadece auth token, Content-Type yok
                     body: formData
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const result = await res.json();
                     alert('Profil fotoğrafı başarıyla güncellendi!');
                     // Yeni avatarı hem sayfada hem de navbar'da anında güncelle
-                    const newAvatarUrl = `http://localhost:3000${result.data}?${new Date().getTime()}`;
+                    const newAvatarUrl = `https://fitverse-backend-ea3y.onrender.com${result.data}?${new Date().getTime()}`;
                     avatarPreview.src = newAvatarUrl;
                     // Navbar'daki avatarı da güncelle (auth.js'in bu elementi bulabilmesi lazım)
                     const navbarAvatar = document.getElementById('navbar-user-avatar');
@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             try {
-                const res = await fetch('http://localhost:3000/api/profile/avatar', {
+                const res = await fetch('https://fitverse-backend-ea3y.onrender.com/api/profile/avatar', {
                     method: 'DELETE',
                     headers: authHeaderOnly
                 });
@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const result = await res.json();
                     alert('Profil fotoğrafı başarıyla kaldırıldı.');
                     
-                    const defaultAvatarUrl = `http://localhost:3000${result.data}?${new Date().getTime()}`;
+                    const defaultAvatarUrl = `https://fitverse-backend-ea3y.onrender.com${result.data}?${new Date().getTime()}`;
                     avatarPreview.src = defaultAvatarUrl;
 
                     const navbarAvatar = document.getElementById('navbar-user-avatar');

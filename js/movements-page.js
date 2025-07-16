@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Kullanıcının favorilerini al
     if (token) {
         try {
-            const res = await fetch('http://localhost:3000/api/profile/me', {
+            const res = await fetch('https://fitverse-backend-ea3y.onrender.com/api/profile/me', {
                 headers: { 'x-auth-token': token }
             });
             if (res.ok) {
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     // Kategoriye göre hareketleri çek ve render et
     try {
-        const res = await fetch(`http://localhost:3000/api/movements/${category}`);
+        const res = await fetch(`https://fitverse-backend-ea3y.onrender.com/api/movements/${category}`);
         const movements = await res.json();
 
         if (movements.length === 0) {
@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 }
                 const movementId = button.dataset.id;
                 try {
-                    const res = await fetch(`http://localhost:3000/api/movements/${movementId}/favorite`, {
+                    const res = await fetch(`https://fitverse-backend-ea3y.onrender.com/api/movements/${movementId}/favorite`, {
                         method: 'POST',
                         headers: { 'x-auth-token': token },
                     });
@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 const action = button.dataset.action;
                 
                 try {
-                    const res = await fetch(`http://localhost:3000/api/movements/${movementId}/like`, {
+                    const res = await fetch(`https://fitverse-backend-ea3y.onrender.com/api/movements/${movementId}/like`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             const ratingValue = ratingIcon.dataset.value;
 
             try {
-                const res = await fetch(`http://localhost:3000/api/movements/${movementId}/rate`, {
+                const res = await fetch(`https://fitverse-backend-ea3y.onrender.com/api/movements/${movementId}/rate`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

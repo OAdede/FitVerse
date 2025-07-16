@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Eğer token varsa, kullanıcı bilgilerini çek
         if (token) {
             try {
-                const res = await fetch('http://localhost:3000/api/profile/me', {
+                const res = await fetch('https://fitverse-backend-ea3y.onrender.com/api/profile/me', {
                     headers: { 'x-auth-token': token }
                 });
                 if (res.ok) {
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (user) {
             // Kullanıcı giriş yapmışsa
             const avatarUrl = user.avatar 
-                ? `http://localhost:3000${user.avatar}?${new Date().getTime()}` 
+                ? `https://fitverse-backend-ea3y.onrender.com${user.avatar}?${new Date().getTime()}` 
                 : '../img/profil.png'; 
 
             topNavHTML += `

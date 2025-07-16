@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  const API_URL = 'http://localhost:3000/api';
+  const API_URL = 'https://fitverse-backend-ea3y.onrender.com/api';
   const headers = {
     'Content-Type': 'application/json',
     'x-auth-token': token,

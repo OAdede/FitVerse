@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             try {
-              const res = await fetch('http://localhost:3000/api/contact/subscribe', {
+              const res = await fetch('https://fitverse-backend-ea3y.onrender.com/api/contact/subscribe', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email }),

@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const email = e.target.email.value;
 
         try {
-            const res = await fetch('http://localhost:3000/api/auth/forgotpassword', {
+            const res = await fetch('https://fitverse-backend-ea3y.onrender.com/api/auth/forgotpassword', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
