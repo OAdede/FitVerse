@@ -32,19 +32,6 @@ services:
       rabbitmq:
         condition: service_healthy
 
-  worker:
-    build: ./backend
-    container_name: fitverse-worker
-    command: node worker.js
-    env_file:
-      - ./backend/.env
-    volumes:
-      - ./backend:/app
-      - /app/node_modules
-    depends_on:
-      rabbitmq:
-        condition: service_healthy
-
   # MongoDB veritabanı servisimiz
   mongo:
     # Resmi MongoDB imajını kullanıyoruz.

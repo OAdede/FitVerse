@@ -123,7 +123,8 @@ app.use('/api/profile', require('./routes/profile'));
 app.use('/api/calculations', require('./routes/calculations'));
 app.use('/api/recipes', require('./routes/recipes'));
 app.use('/api/contact', require('./routes/contact'));
-app.use('/api/movements', require('./routes/movements')); // Add this line
+app.use('/api/movements', require('./routes/movements')); 
+app.use('/api/worker', require('./routes/worker')); // Yeni worker rotasını ekle
 
 // Server'ı dinle
 const PORT = process.env.PORT || 3000;
