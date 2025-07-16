@@ -15,17 +15,19 @@ const sendEmail = async (options) => {
         from: `FitVerse Bildirim <${process.env.SMTP_EMAIL}>`,
         to: options.to,
         subject: options.subject,
+        text: options.message,
     };
 
-    // Conditionally add text or html. Cannot have both if one is undefined.
-    if (options.html) {
-        mailOptions.html = options.html;
-    } else {
-        mailOptions.text = options.message;
-    }
-
     // 3. Actually send the email
-    await transporter.sendMail(mailOptions);
+    try {
+        const info = await transporter.sendMail(mailOptions);
+        console.log('Email sent successfully!', info);
+    } catch (error) {
+        console.error('Error sending email:', error);
+        // Bu hatayı fırlatarak, çağıran fonksiyonun (örn: emailProcessor)
+        // hatayı yakalamasını ve mesajı kuyruktan silmemesini sağlıyoruz.
+        throw error;
+    }
 };
 
 module.exports = sendEmail; 

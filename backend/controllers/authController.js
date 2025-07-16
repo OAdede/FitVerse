@@ -100,14 +100,14 @@ exports.login = async (req, res, next) => {
 };
 
 // @desc    Change user password
-// @route   POST /api/auth/changepassword
+// @route   PUT /api/auth/changepassword
 // @access  Private
 exports.changePassword = async (req, res) => {
     const { currentPassword, newPassword } = req.body;
 
     try {
         // Kullanıcıyı veritabanından bul
-        const user = await User.findById(req.user.id);
+        const user = await User.findById(req.user.id).select('+password');
         if (!user) {
             // Bu durumun normalde olmaması gerekir çünkü auth middleware'i kullanıcıyı bulmalı
             return res.status(404).json({ msg: 'Kullanıcı bulunamadı' });
@@ -152,7 +152,7 @@ exports.forgotPassword = async (req, res, next) => {
         await user.save({ validateBeforeSave: false });
 
         // Sıfırlama URL'sini oluştur
-        const resetUrl = `${req.protocol}://${req.get('host')}/html/reset-password.html?token=${resetToken}`;
+        const resetUrl = `${process.env.FRONTEND_URL}/html/reset-password.html?token=${resetToken}`;
 
         const message = `
             Şifrenizi sıfırlamak için bu linke tıklayın. Bu link 10 dakika geçerlidir.\n\n${resetUrl}
